@@ -1,0 +1,44 @@
+[
+    {
+        "name": "inakiabt/etsy-php",
+        "version": "0.11.0",
+        "version_normalized": "0.11.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/inakiabt/etsy-php.git",
+            "reference": "0e221834448eb9f7e4c75250975ce1db12389480"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/inakiabt/etsy-php/zipball/0e221834448eb9f7e4c75250975ce1db12389480",
+            "reference": "0e221834448eb9f7e4c75250975ce1db12389480",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/php-code-coverage": "1.2.6",
+            "phpunit/php-invoker": ">=1.1.0",
+            "phpunit/phpunit": "3.7.5"
+        },
+        "time": "2017-09-07T22:20:36+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Etsy\\": "src/Etsy/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Iñaki Abete"
+            }
+        ],
+        "description": "Simple PHP wrapper for Etsy API"
+    }
+]

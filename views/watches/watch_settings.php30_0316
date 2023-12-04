@@ -1,0 +1,156 @@
+<?php 
+$shape = '';
+switch ($details['shape'])
+	{
+		case 'B':
+			$shape = 'Round';
+			break;
+		case 'PR':
+			$shape = 'Princess';
+			break;
+		case 'R':
+			$shape = 'Radiant';
+			break;
+		case 'E':
+			$shape = 'Emerald';
+			break;
+		case 'AS':
+			$shape = 'Ascher';
+			break;
+		case 'O':
+			$shape = 'Oval';
+			break;
+		case 'M':
+			$shape = 'Marquise';
+			break;
+		case 'P':
+			$shape = 'Pear shape';
+			break;
+		case 'H':
+			$shape = 'Heart';
+			break;
+		case 'C':
+			$shape = 'Cushion';
+			break;								  	
+		default:
+			$shape = $details['shape'];
+			break;
+  }			
+
+?>
+<div class="pad05 ringbody">
+  		
+	  	<div>
+			<div class="topdiv">
+				<?php echo $top_ads;?>
+			</div>	   				 
+			
+			<div class="floatr divheader m10"><!--<img src="<?php echo config_item('base_url');?>/images/ruman/engagement/build_you_own_ring.jpg">--></div>
+				<div class="dbr"></div>
+				<div class="dbr"></div>
+				<div class="dbr"></div>	  			
+	  			
+	  			<div class="width520px left235px">		  			
+		  			<?php if(isset($tabhtml)) echo $tabhtml;?>
+	  			</div>
+  			</div>
+
+			
+			
+			<div class="ringcontainer ringbody">
+				<div class="watchLeftbox">
+				<?php if($details){?>
+					<div>
+						<h5 class="textcenter"><font class="bgblue">Your Diamond</font></h4>
+					</div>
+					<div>
+						<table width="220" cellpadding="0" cellspacing="0" style="border: 1px solid #e9e9e9;">
+							<tbody>
+								<tr>
+									<td width="60">
+									    <img src="<?php echo config_item('base_url')?>images/diamonds/<?php echo strtolower($shape);?>.jpg">
+									</td>
+									<td width="160">
+										<table cellpadding="0" cellspacing="0" border="0" width="100%">
+											<tbody>
+												<tr class=" font9px"><td align="right">Lot #: </td><td align="left">&nbsp;<?php echo $details['lot'] ;?></td></tr>
+												<tr class=" font9px"><td align="right">Shape : </td><td align="left">&nbsp;<?php echo $shape; ?></td></tr>
+												<tr class=" font9px"><td align="right">Carat : </td><td align="left">&nbsp;<?php echo $details['carat']; ?></td></tr>
+												<tr class=" font9px"><td align="right">Price : </td><td align="left">&nbsp;<?php echo $details['price']; ?></td></tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						
+						</table>
+						
+					</div>
+					<div class="dbr"></div>
+					<?php }?> 
+					
+					
+					<div class="setlabelHead">Select Your Design:</div><br>
+                    <div><input name="marktchk" id="Rolex" type="checkbox" onclick="getwatchresults()" checked="checked" value="Rolex"> Rolex</div>
+					
+                    <div class="dbr"></div>
+					<div class="bigcontainerL marginauto">
+					<form name="design">
+					<?php $i=1;
+					$brandPrint = '';
+					$viewBrand = '';
+					foreach($brand as $brandArr) {
+						$viewBrand .= '<div class="floatl rolex">';
+						$viewBrand .= '<div><input name="marktchk" id="'.$brandArr['brand'].'" type="checkbox" onclick="getwatchresults()" checked="checked" value="'.$brandArr['brand'].'"></div>';
+						$viewBrand .= '<div><label for="marktchk" align="bottom"><a class="hiddendiv" ></a>'.$brandArr['brand'].'</label></div>';
+						$viewBrand .= '</div>';
+							$i++;
+						}
+					?> asdf
+                                            <div class="clear"></div>
+                                            
+						</form>						
+						<div class="clear"></div>
+						
+					</div>
+					
+					
+					
+					<div class="dbr"></div>
+					<div class="setlabelHead">Select Watch Conditon</div><br>
+                    <div>
+                        <div><input id="pavsechk" type="checkbox" onclick="getwatchresults()" value="Preowned" checked="checked"> Preowned</div>
+                        <div><input id="solitairechk" type="checkbox" onclick="getwatchresults()" value="New" checked="checked"> New</div>
+                    </div>
+                    <br><br>
+					<div class="setlabelHead">Select Metal Type(s)</div><br>
+                    <div>
+                    	<div><input id="patinumchk" type="checkbox" onclick="getwatchresults()" value="" checked="checked"> Stainless steel</div>
+                        <div><input id="goldsschk" type="checkbox" onclick="getwatchresults()" value="" checked="checked"> Stainless Steel and Gold</div>
+                        <div><input id="goldchk" type="checkbox" onclick="getwatchresults()" value="" checked="checked"> Gold</div>
+                    </div>
+                    <br><br>
+					<div class="setlabelHead">Price Range:</div><br>
+                        <div>
+                            Min: <input type="text" value="<?php echo $minprice;?>" id="pricerange1" name="pricerange1" class="w50px price">
+                            Max: <input type="text" value="<?php echo $maxprice;?>" id="pricerange2" name="pricerange2" class="w50px price">
+                        </div>
+					</div> <!--end  roundcorner-->
+				
+				<input type="hidden" id="hlot" name="hlot" value="<?php echo isset($lot) ? $lot : 0 ;?>"/>
+				
+				<div class="rightcontent_block">
+                <br>
+                	<div><h1 class="pageMainHeading">Diamond Watch</h1></div>
+					<?php echo $watch_block; ?>
+                    <div class="clear"></div>
+					  <!--<div id="searchresult"></div>--> 
+				</div>
+				<div class="clear"></div>
+			
+			</div> 
+				
+				
+	  	</div>
+	  	
+</div>

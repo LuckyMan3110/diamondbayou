@@ -1,0 +1,239 @@
+<link type="text/css" href="<?php echo SITE_URL; ?>css/simple_model.css" rel="stylesheet" />
+<link type="text/css" href="<?php echo SITE_URL; ?>css/heart_diamond.css" rel="stylesheet" />
+<link type="text/css" href="<?php echo SITE_URL; ?>css/simple_model.css" rel="stylesheet" />
+<style>
+    .prdSection {
+      width: 21%;
+    }
+</style>
+<!--<script src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
+<script>
+    var base_link = '<?php echo SITE_URL;?>';
+    
+function view_diamond_listdetail(lotid) {
+    $.ajax({
+            type: "POST",
+            url: base_link + 'testengagementrings/getDiamondListDetail/' + encodeURI(lotid),
+            success: function(response) {
+                     $('#ring_diamond_dt').html(response);
+                     //view_carat_graph( lotid );
+           },
+                     error: function(){alert('Error ');}
+        });
+        
+        view_carat_graph( lotid );
+        getLeftDiamondDetail( lotid, 'diamond' );
+}
+
+function view_carat_graph(lot_id) {
+    $.ajax({
+            type: "POST",
+            url: base_link + 'testengagementrings/showCaratGraph/' + encodeURI(lot_id),
+            success: function(response) {
+                     $('#carat_graph').html(response);
+           },
+                     error: function(){alert('Error ');}
+        });
+}    
+</script>
+<?php if( count($stones_list) > 0 ) { 
+    
+    $diamond_shap = view_shape_value($diamond_image, $row_detail['shape']);
+    $row_detail['carat'] = _nf($row_detail['carat'], 2);
+    
+    ?>
+<div class="detail_ring_bk">
+<div id="ring_diamond_dt">
+    <div class="detail_bk_left col-sm-3">
+        <div class="detail_inner_bk">
+            <div class="detail_bk_head"><?php echo $diamond_shap; ?> Diamond</div>
+            <div class="clarity_row">
+                <div class="clarity_cols">
+                    <div>Carat</div>
+                    <div><?php echo $row_detail['carat']; ?></div>
+                </div>
+                <div class="clarity_cols">
+                    <div>Clarity</div>
+                    <div><?php echo $row_detail['clarity']; ?></div>
+                </div>
+                <div class="clarity_cols">	
+                    <div>Color</div>
+                    <div><?php echo $row_detail['color']; ?></div>
+                </div>
+                <div class="clear"></div><br>
+            </div>
+            <div class="clear"></div><br>    
+            <div>
+<!--                            <img src="<?php echo SITE_URL; ?>img/heart_diamond/diamond_shape_view.jpg" alt="" />-->
+                <img src="<?php echo SITE_URL; ?>images/shapes_images/<?php echo $diamond_image; ?>" alt="shapes_images">
+            </div><br>
+            <div>
+                <div><a href="#javascript" class="link_style">Learn About Diamonds</a></div>
+                <div><a href="#javascript" class="link_style">View GIA Certificate</a></div><br>
+                <div class="prices_label">$<?php echo _nf($row_detail['price'], 2); ?></div><br>
+                <div class="total_price_label">Total ring price</div><br><br><br>
+                <div><a href="#" class="button_link">Change this diamond</a></div>
+            </div><br>
+
+        </div>
+    </div>
+    <div class="detail_bk_right col-sm-8">
+        <div><br><br>
+            <div class="rightdetail" id="">
+    <div class="right_dtheading"><?php echo $row_detail['carat'].' Carat '.$diamond_shap.' Diamond'; ?></div>
+    <div><?php
+    $diamond_desc = 'This fair-cut '.$row_detail['cut'].', '.$row_detail['color'].'-color and '.$row_detail['clarity'].'-clarity diamond comes accompanied by a diamond grading report from the '.$row_detail['Cert'].'. <br>Have a question regarding this item? Our specialists are available to assist you.';
+
+    echo $diamond_desc;
+
+    ?></div><br>
+    <div>
+        <div class="contact_no_dt"><b><?php echo CONTACT_NO; ?></b></div>
+        <div><a href="mailto:<?php echo SITE_EMAIL; ?>"><?php echo SITE_EMAIL; ?></a></div>
+    </div>
+    <br>
+    <div class="diamond_left_dt">
+        <div class="detail_rows"><label>SKU# <?php echo $row_detail['Stock_n']; ?></label></div>
+        <div class="detail_rows">
+            <span>Measurements: </span>
+            <span><?php echo $row_detail['Meas']; ?></span>
+            <div class="clear"></div>
+        </div>
+        <div class="detail_rows">
+            <span>Price</span>
+            <span>$<?php echo _nf($row_detail['price'],2); ?></span>
+            <div class="clear"></div>
+        </div>
+        <div class="detail_rows">
+            <span>Wire Price</span>
+            <span>$<?php echo _nf($row_detail['price'],2); ?></span>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="right_detail_cols">
+        <div class="right_left_dtcols">
+            <div class="detail_rows"></div>
+        <div class="detail_rows">
+            <span>Report </span>
+            <span><?php echo $row_detail['lab']; ?></span>
+            <div class="clear"></div>
+        </div>
+        <div class="detail_rows">
+            <span>Color </span>
+            <span><?php echo $row_detail['color']; ?></span>
+            <div class="clear"></div>
+        </div>
+
+        </div>
+        <div class="right_left_dtcols">
+            <div class="detail_rows"></div>
+        <div class="detail_rows">
+            <span>Cut </span>
+            <span><?php echo $row_detail['cut']; ?></span>
+            <div class="clear"></div>
+        </div>
+         <div class="detail_rows">
+            <span>Clarity </span>
+            <span><?php echo $row_detail['clarity']; ?></span>
+            <div class="clear"></div>
+        </div>
+        </div>                    
+    </div>                
+    <div class="clear"></div><br>
+      <div class="other_link_list">
+          <ul>
+              <li><a href="#" class="js__p_another_start">Drop a Hint</a></li>
+              <li><a href="<?php echo SITE_URL; ?>account/account_wishlist/89 39/add/rapnet/">Add to Wishlist</a></li>
+              <li><a href="#" class="js__p_another_start">Ask an Expert</a></li>
+              <li><a href="#" class="js__p_start">Email a Friend</a></li>
+              <li><a href="#" class="js__p_another_start">Schedule Viewing</a></li>
+              <li><a href="#javascript" onclick="printCurrPage()">Print Details</a></li>
+          </ul>
+        </div>
+        <div class="clear"></div><br>
+        <div><b>Other Reports</b></div>
+        <div class="other_reports_link">
+            <ul>
+              <li><a href="#">Lab Report</a></li>
+              <li>
+                  <?php
+ if( $row_detail['Cert'] == 'GIA' ) {
+     $verify_link = 'http://www.gia.edu/cs/Satellite?reportno='.$row_detail['Cert_n'].'&c=Page&childpagename=GIA%2FPage%2FReportCheck&pagename=GIA%2FDispatcher&cid=1355954554547&encryptedString=7CD682F48A4AC0441FEEC95403BDAA3C';
+ } else {
+     $verify_link = '#';
+ }
+ 
+?>
+                  <a href="<?php echo $verify_link; ?>" target="_blank">Verify Lab Report</a></li>
+          </ul>
+        </div>
+</div>
+    <div class="clear"></div><br>
+        </div><br>
+    </div>
+</div>            
+                <div class="clear"></div><br>
+                
+                    <div class="diamond_result">
+                        <table width="">
+                            <thead>
+                                <tr>
+                                    <th>Sort:</th>
+                                    <th>Carat</th>
+                                    <th>Clarity</th>
+                                    <th>Color</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $diamond_list = '';
+                                foreach($stones_list as $rowlist ) {
+                                    $diamond_shape = view_shape_value($view_diamondimg, $rowlist['shape']);
+                                    $lotid = str_replace('/', '_slash_', $rowlist['lot']);
+                                    
+                                    $diamond_list .= '<tr>
+                                    <td><img src="'.SITE_URL.'images/shapes_images/'.$view_diamondimg.'" width="25" alt="'.$diamond_shape.'" /></td>
+                                    <td>
+                                        <div>Carat</div>
+                                        <div>'.$rowlist['carat'].'</div>
+                                    </td>
+                                    <td>
+                                        <div>Clarity</div>
+                                        <div>'.$rowlist['clarity'].'</div>
+                                    </td>
+                                    <td>
+                                        <div>Color</div>
+                                        <div>'.$rowlist['color'].'</div>
+                                    </td>
+                                    <td>
+                                        <div>Ring Price</div>
+                                        <div>$'._nf($rowlist['price'], 2).'</div>
+                                    </td>
+                                    <td>
+                                        <div><a href="#" class="table_link">View '.$rowlist['lab'].' <br>Certificate</a></div>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <div><a href="#javascript" onClick="view_diamond_listdetail(\''.$lotid.'\'); selectThisDiamond(\''.$lotid.'\', \''.$rowlist['price'].'\')">Select</a></div>
+                                    </td>
+                                </tr>';
+                                }
+                                
+                                echo $diamond_list;
+                                
+                                ?>
+                                  
+                            </tbody>
+                        </table>
+                    </div>
+                <div class="clear"></div><br>
+            </div>
+<?php } else {
+        echo '<div>NO DIAMOND FOUND FOR THIS RING!</div>';
+    }
+?>
+<div id="carat_graph_block"></div>

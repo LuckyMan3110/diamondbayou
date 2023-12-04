@@ -1,0 +1,20 @@
+[16-Mar-2018 10:19:02 UTC] PHP Notice:  Undefined index: oauth_token in /home/goldsource/public_html/etsy-goldsource/vendor/send.php on line 6
+[16-Mar-2018 10:19:02 UTC] PHP Notice:  Undefined index: oauth_token_secret in /home/goldsource/public_html/etsy-goldsource/vendor/send.php on line 7
+[16-Mar-2018 10:19:02 UTC] Invalid auth/bad request (got a 403, expected HTTP/1.1 20X or a redirect)
+[16-Mar-2018 10:19:02 UTC] oauth_problem=token_rejected
+[16-Mar-2018 10:19:02 UTC] Array
+(
+    [url
+[16-Mar-2018 16:05:02 UTC] PHP Notice:  Undefined index: oauth_token in /home/goldsource/public_html/etsy-goldsource/vendor/send.php on line 6
+[16-Mar-2018 16:05:02 UTC] PHP Notice:  Undefined index: oauth_token_secret in /home/goldsource/public_html/etsy-goldsource/vendor/send.php on line 7
+[16-Mar-2018 16:05:02 UTC] Invalid auth/bad request (got a 403, expected HTTP/1.1 20X or a redirect)
+[16-Mar-2018 16:05:02 UTC] oauth_problem=token_rejected
+[16-Mar-2018 16:05:02 UTC] Array
+(
+    [url
+[19-Mar-2018 11:28:43 UTC] PHP Notice:  Undefined index: aman in /home/goldsource/public_html/etsy-goldsource/vendor/oauth1.php on line 5
+[19-Mar-2018 11:28:43 UTC] PHP Notice:  Undefined index: aman in /home/goldsource/public_html/etsy-goldsource/vendor/oauth1.php on line 9
+[19-Mar-2018 11:29:00 UTC] PHP Notice:  Undefined index: aman in /home/goldsource/public_html/etsy-goldsource/vendor/oauth1.php on line 5
+[19-Mar-2018 11:29:00 UTC] PHP Notice:  Undefined index: aman in /home/goldsource/public_html/etsy-goldsource/vendor/oauth1.php on line 9
+[19-Mar-2018 11:29:03 UTC] PHP Notice:  Undefined index: aman in /home/goldsource/public_html/etsy-goldsource/vendor/oauth1.php on line 5
+[19-Mar-2018 11:29:03 UTC] PHP Notice:  Undefined index: aman in /home/goldsource/public_html/etsy-goldsource/vendor/oauth1.php on line 9
